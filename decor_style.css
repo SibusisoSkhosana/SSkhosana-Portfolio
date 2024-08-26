@@ -288,7 +288,19 @@ nav ul li a {
 }
 
 
-/* About Me Section */
+/* Style for the heading with black color and green border streaks */
+.styled-heading {
+    color: black; /* Text color */
+    display: inline-block; /* Allow border to wrap the content */
+    border-bottom: 2px solid #25D366; /* WhatsApp green color for bottom border */
+    padding-bottom: 5px; /* Space between text and border */
+    text-shadow: 1px 1px 0 #f2fdf6, -1px -1px 0 #e1ffec, -1px 1px 0 #e7fff0, 1px -1px 0 #deffea; /* Green streak effect around text */
+    position: relative; /* Positioning context for pseudo-elements */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+
+
 
 
 /* Optional: Center the About Me Section */
