@@ -1,0 +1,796 @@
+/*div {
+    border: 3px solid #fa0303; DivGuide 
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Across the Road';
+    src: url('fonts/Across the Road.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Righteous';
+    src: url('fonts/Righteous-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('fonts/TitilliumWeb-Regular.ttf') format('truetype');
+}
+
+
+
+
+body {
+    background-image: url('images/Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Titillium', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #333;
+}
+
+.Homepage-text h2 {
+    font-family: 'Righteous', sans-serif;
+    font-size: 18pt;
+}
+
+.Homepage-text h1 {
+    font-family: 'Titillium', sans-serif;
+    font-size: 50pt;
+}
+
+.Homepage-text p {
+    font-family: 'Righteous', sans-serif;
+    font-size: 14pt;
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures the nav items take up the full width */
+}
+
+/* Navigation Items */
+nav ul li {
+    margin: 0 5px;
+}
+
+/* Navigation Links */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+     /* Adjust the second-to-last child */
+     nav ul li:nth-last-child(2) {
+        text-align: right;
+    }
+
+    #contactLink {
+        margin-left:700px;
+    }
+
+/* Strobe Light Effect */
+#strobeName {
+    animation: colorStrobe 5s infinite;
+}
+
+/* Strobe Keyframes */
+@keyframes colorStrobe {
+    0% {
+        color: #d2d7d2;
+    }
+    25% {
+        color: #99ff99;
+    }
+    50% {
+        color: #b5fcb5;
+    }
+    75% {
+        color: #9dff9d;
+    }
+    100% {
+        color: #caccca;
+    }
+}
+
+/* Remove Hover and Cursor Effects */
+#strobeName:hover,
+#strobeName {
+    cursor: default;
+    background-color: transparent;
+}
+
+.WickedButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    max-width: 100%; /* Make sure the button doesn't cause overflow */
+    width:auto;
+    box-sizing: border-box;
+}
+
+/*Homepage Section/*
+
+/* Ensure the container takes up the full height of the viewport */
+.container {
+    display: flex;
+    height: auto;
+}
+
+/* Each half will take up 50% of the container's width */
+.left-half, .right-half {
+    flex: 1; /* Flexbox property to equally divide the space */
+}
+
+/* Example styling for each half */
+.left-half {
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-box {
+    background-color: #e0e0e0; /* Slightly darker grey for the box */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
+    text-align: center; /* Center-align text and image */
+    max-width: 400px; /* Set a max-width for the box */
+    width: 100%; /* Make it responsive */
+    margin-top:20px;
+    height: 530px;
+    position: relative; /* Required for positioning the image */
+}
+
+.profile-pic {
+    width: 240px; /* Adjust size as needed */
+    height: 360px; /* Ensure it’s a square */
+    border-radius: 10%; /* Makes the image round */
+    border: 3px solid #333; /* Optional: adds a border around the image */
+    object-fit: cover; /* Ensures the image covers the circle area */
+    margin-bottom: 20px; /* Spacing below the image */
+ 
+}
+
+.profile-pic-container {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Positioning context */
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Hide image overflow */
+}
+
+.profile-pic:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.profile-pic-wrapper {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/* Ensure the right-half container is using flexbox for alignment */
+.right-half {
+    background-image: 'images/Background.jpg';
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center align content vertically */
+}
+
+/* Style the text-content div */
+.Homepage-text {
+    margin-bottom:70px;
+    max-width: 100%; /* Optional: Restrict the width if needed */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+
+/* Button Styling */
+.Cool_button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-left:25%;
+}
+
+
+
+#BadgeButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 20px;
+    background-color: #25d359; /* WhatsApp green */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 184px;
+    margin-top:10px;
+    opacity: 0.8;
+}
+
+
+.Cool_button img.whatsapp_button {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.Cool_button:hover {
+    background-color: #128C7E; /* Darker WhatsApp green */
+}
+
+.WickedButton:hover {
+    background-color: #128C7E; /* Darker WhatsApp green */
+}
+
+#BadgeButton:hover {
+    background-color: #128C7E; /* Darker WhatsApp green */
+}
+
+
+/* About Me Section */
+
+
+/* Optional: Center the About Me Section */
+.centered-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+    height: auto; /* Allow the section to adjust based on content */
+}
+
+/* Container for About Me Section */
+
+
+.About_Me_Section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100%; /* Ensure it takes up the full height of its container */
+    text-align: center; /* Center the text within the box */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+    padding: 20px; /* Space inside the box */
+    margin: 20px auto; /* Center the box horizontally within its container */
+    width: 80%; /* Adjust the width to fill more space */
+}
+
+.About_Me_Section.show {
+    opacity: 1; /* Fully visible when the 'show' class is added */
+}
+
+.About_Me_Section h1, .About_Me_Section p {
+    margin: 0; /* Remove default margins */
+    padding: 10px 0; /* Add some space between the elements */
+    width: 100%; /* Ensure the text takes the full width of the container */
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    padding-top: 55px;
+    height:700px;
+    max-width: 1000px; /* Adjust this to your preference */
+    margin: auto;
+    overflow: visible;
+    align-items: vertical;
+    flex-direction: column;
+}
+
+/* Slides */
+.slide {
+    display: none; /* Hide slides by default */
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:70px;
+}
+
+/* Flip Card */
+
+.flip-card {
+    width: 200px;
+    height: 230px;
+    perspective: 1000px;
+    flex: 1 1 200px; /* Adjust this to ensure even spacing */
+    max-width: 200px;
+    margin: 10px; /* Adjust margin if needed */
+    position: relative; /* Ensures the stars align properly behind the flip cards */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a 3D effect */
+    overflow: hidden;
+}
+
+.flip-card-back {
+    background-color: rgba(38, 45, 41, 0.8); /* Slightly transparent background */
+    border-radius: 15px; /* Smooth corners */
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Ensures content doesn't overflow */ 
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+
+.flip-card-img {
+    max-width: 100px;
+    max-height: 100px;
+    height: auto; /* Ensure the image scales correctly */
+    background-color: transparent; /* Ensure no background color */
+}
+
+.flip-card p {
+    margin: 10px 0; /* Add some space between paragraphs */
+  }
+
+.flip-card-front h2 {
+    margin-bottom: 0px; /* Adjust spacing as needed */
+    font-size: 1.5em; /* Adjust font size as needed */
+    color: #333; /* Adjust color as needed */
+    text-align: center;
+    font-family: TitilliumWeb-Light, sans-serif;
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 14px;
+    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+.flip-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Adjust gap between cards */
+    justify-content: center; /* Center items horizontally */
+}
+
+.slide-heading-bg {
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -10px; /* Add some space below the heading */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
+    border-radius: 5px;
+    overflow:hidden;
+}
+
+#legend {
+    font-size: 18px; /* Adjusted for readability */
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added subtle shadow for depth */
+    max-width: 800px; /* Added max-width for better responsiveness */
+    margin: 20px auto; /* Center legend on the page */
+}
+
+#legend ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Spacing between list items */
+}
+
+#legend li {
+    display: flex; /* Align star icons and text inline */
+    align-items: center;
+    gap: 10px; /* Space between star icons and text */
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+    font-size: 14px; /* Slightly larger for better readability */
+}
+
+#legend li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.LegendStars {
+    width: 20px; /* Larger size for better visibility */
+    height: 20px;
+   
+}
+
+.LegendStars path {
+    fill: #FFD700; /* Gold color for filled stars */
+  }
+
+/* Popup styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px; /* Limit the width */
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Style the image using its ID */
+#emailButton,
+#phoneButton,
+#addressButton {
+    width: 20px; /* Adjust the size of the icon */
+    height: 20px; /* Ensure the height matches the width for a square icon */
+    vertical-align: middle; /* Align the icon with the middle of the text */
+    margin-right: 10px; /* Add some space between the icon and the text */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Optionally, you can add hover effects or other styles */
+#emailButton:hover,
+#phoneButton:hover,
+#addressButton:hover {
+    opacity: 0.8; /* Slightly fade the icon on hover */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transform: rotate(360deg); /* Rotate the icon 360 degrees */
+}
+
+/* The UL containing the stars */
+.rating {
+    display: flex;
+    justify-content: center; /* Centers the stars horizontally */
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .rating .star {
+    margin: 0 5px; /* Adds spacing between stars */
+  }
+  
+  .rating .star svg {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .starFull path {
+    fill: #FFD700; /* Gold color for filled stars */
+  }
+  
+  .starEmpty path {
+    fill: #C0C0C0; /* Silver color for empty stars */
+  }
+  
+  .rating .star:hover svg path {
+    fill: #FF6347; /* Changes color when hovered (e.g., Tomato color) */
+  }
+ 
+  /* Main box styling */
+.Projects {
+    background-color: rgba(255, 255, 255, 0.8); /* Light white */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    margin-top: 120px;
+    width: 80%; /* Adjust as needed for your layout */
+}
+
+/* Center-align and underline the heading */
+.Projects h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+/* Flexbox to split the section */
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid #ccc; /* Line between left and right halves */
+}
+
+#left-project,
+#right-project {
+    flex: 1;
+    box-sizing: border-box; /* Include padding in width calculations */
+    padding: 10px;
+}
+
+#left-project {
+    flex-basis: 70%; /* 70% of the space */
+    border-right: 2px solid #ccc; /* Line between the two halves */
+}
+
+#right-project {
+    flex-basis: 30%; /* 30% of the space */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+/* Style the paragraphs and headings within projects */
+.Projects h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.Projects p {
+    margin: 0;
+}
+
+.Projects a {
+    text-decoration: none;
+    color: #007BFF; /* Example link color */
+}
+
+.Projects a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* Style the horizontal line between projects */
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #1a1a1a; /* Slightly lighter than pure black for a modern look */
+    color: #f1f1f1; /* Light gray text for better readability */
+    padding: 15px 0; /* Slightly more padding for a comfortable layout */
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif; /* Match font with the rest of the site */
+}
+
+.footer-bottom {
+    font-size: 14px;
+    font-weight: 300; /* Light font weight for a minimalist look */
+    letter-spacing: 0.5px; /* Slightly increased letter spacing for readability */
+    opacity: 0.8; /* Slight transparency for a sleek effect */
+    transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+.footer-bottom:hover {
+    opacity: 1; /* Full opacity on hover to make it more interactive */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+    }
+
+    .WickedButton {
+         /* Button should take up full width on small screens */
+        max-width: none;
+        margin: 10px 0; /* Add margin for spacing */
+        text-align: center; /* Center the button text */
+    }
+
+
+     /* Adjust the second-to-last child */
+    nav ul li:nth-last-child(2) {
+        text-align: right;
+    }
+
+    #contactLink {
+        margin-left:500px;
+    }
+
+ 
+    nav ul li {
+        flex-grow: 1;
+        width: 100%; /* Ensure full width for each item */
+    }
+
+    nav ul li a {
+        padding: 10px 0;
+    }
+}
+
+/* Ensure the right-half container is using flexbox for alignment */
+.right-half {
+   margin-bottom: 220px;
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: space-between;
+        
+    }
+
+    /* Adjust font sizes slightly for tablet */
+    .Homepage-text h1 {
+        font-size: 40pt;
+    }
+
+    .Homepage-text h2 {
+        font-size: 16pt;
+    }
+
+    .Homepage-text p {
+        font-size: 12pt;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .Homepage-text h1 {
+        font-size: 30pt;
+    }
+
+    .Homepage-text h2 {
+        font-size: 14pt;
+    }
+
+    .Homepage-text p {
+        font-size: 10pt;
+    }
+}
+
+
