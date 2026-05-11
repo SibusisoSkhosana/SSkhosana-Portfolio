@@ -24,7 +24,7 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16 py-4 flex justify-between items-center">
         <motion.div
           className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
           whileHover={{ scale: 1.1 }}
@@ -109,7 +109,7 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+            <div className="container mx-auto px-6 sm:px-10 py-4 flex flex-col gap-3">
               {sections.map((section) => (
                 <motion.button
                   key={section.id}

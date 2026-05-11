@@ -91,7 +91,7 @@ const Contact = () => {
   }
 
   return (
-    <section className="relative pt-24 pb-20 px-4">
+    <section className="relative pt-24 pb-20">
     <div className="mx-auto w-full max-w-6xl">
         <motion.div
           variants={containerVariants}

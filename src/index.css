@@ -2,8 +2,43 @@
 
 @import "tailwindcss";
 @config "../tailwind.config.js";
+@source "../index.html";
+@source "./";
 
 @variant dark (&:where(.dark, .dark *));
+
+/* ── Layout padding (direct CSS — not Tailwind utilities) ── */
+
+/* Nav inner wrapper */
+nav.fixed > div {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* All page sections and footer inner wrappers */
+main > section,
+footer#footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  nav.fixed > div,
+  main > section,
+  footer#footer {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav.fixed > div,
+  main > section,
+  footer#footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
 
 * {
   margin: 0;
