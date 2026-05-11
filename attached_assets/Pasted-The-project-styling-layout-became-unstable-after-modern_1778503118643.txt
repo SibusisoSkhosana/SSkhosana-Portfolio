@@ -1,0 +1,194 @@
+The project styling/layout became unstable after modernizing/upgrading React/npm dependencies.
+
+The AI is currently fixing issues in isolated pieces instead of restoring overall visual consistency.
+
+This is now a FULL VISUAL REGRESSION + LAYOUT RESTORATION task.
+
+==================================================
+CURRENT PROBLEMS
+================
+
+After dependency upgrades:
+
+* layouts are broken
+* sections are no longer centered
+* spacing is inconsistent
+* components shifted out of place
+* responsive alignment broke
+* containers no longer match
+* some flex/grid layouts collapsed
+* typography still loads correctly
+* dark/light theme inconsistencies still exist
+* color system remains partially broken
+
+The portfolio previously looked visually cohesive before the upgrade.
+
+The goal is to RESTORE premium cinematic layout quality across the ENTIRE application.
+
+==================================================
+IMPORTANT
+=========
+
+STOP patching random components individually without understanding the full layout system.
+
+DO NOT:
+
+* randomly add margins/padding
+* use arbitrary translate hacks
+* force positioning fixes
+* apply temporary visual band-aids
+
+Instead:
+Perform a SYSTEMATIC layout and styling audit.
+
+==================================================
+PHASE 1 — RESTORE GLOBAL LAYOUT FOUNDATION
+==========================================
+
+Audit:
+
+* global.css
+* index.css
+* app layout wrappers
+* Tailwind config
+* container widths
+* spacing scale
+* flex/grid utilities
+* overflow settings
+* min-height/full-height behavior
+* responsive breakpoints
+
+Verify:
+
+* Tailwind utilities still compile correctly
+* container classes behave correctly
+* flex/grid parents are intact
+* justify-center/items-center are applied properly
+* width constraints still work
+* upgraded packages did not break utility behavior
+
+==================================================
+PHASE 2 — RESTORE SECTION ALIGNMENT
+===================================
+
+Systematically inspect and fix:
+
+1. Navbar
+2. Hero section
+3. About section
+4. Skills galaxy
+5. Project cards
+6. Timeline
+7. Certifications
+8. Contact section
+9. Footer
+
+For EACH section verify:
+
+* horizontal centering
+* vertical spacing
+* consistent max-width
+* proper responsive scaling
+* balanced padding
+* proper z-index layering
+* no overflow issues
+* no broken flex/grid alignment
+
+==================================================
+PHASE 3 — RESTORE DESIGN SYSTEM CONSISTENCY
+===========================================
+
+Re-establish a unified visual system.
+
+Ensure:
+
+* spacing scale is consistent
+* cards use same border radius system
+* glow effects are consistent
+* typography hierarchy matches
+* section spacing feels intentional
+* glassmorphism panels match
+* animation timing is consistent
+
+==================================================
+PHASE 4 — FIX THEME SYSTEM PROPERLY
+===================================
+
+The dark/light mode issues from previous debugging STILL exist.
+
+Current issues:
+
+* some components remain stuck in wrong colors
+* navbar styling inconsistent
+* text unreadable in light mode
+* hardcoded Tailwind colors override themes
+* some child cards inherit incorrect backgrounds
+
+Search entire project for hardcoded:
+
+* text-white
+* bg-black
+* bg-white
+* border-white
+* fixed gradients
+* fixed glow colors
+
+Replace with proper theme-aware classes.
+
+Examples:
+text-slate-900 dark:text-white
+bg-white/70 dark:bg-zinc-900/50
+border-zinc-200 dark:border-zinc-800
+
+==================================================
+PHASE 5 — REBUILD VISUAL POLISH
+===============================
+
+Restore the original premium feel:
+
+* cinematic spacing
+* elegant alignment
+* futuristic atmosphere
+* responsive polish
+* smooth visual hierarchy
+
+The portfolio should feel:
+
+* modern
+* balanced
+* intentional
+* premium
+* production-ready
+
+==================================================
+CRITICAL REQUIREMENT
+====================
+
+DO NOT just make the site “functional.”
+
+Restore the ORIGINAL visual quality and premium layout consistency that existed before the package modernization.
+
+The final result should look like:
+A polished futuristic SaaS-quality portfolio.
+
+NOT:
+A partially repaired broken frontend.
+
+==================================================
+FINAL VERIFICATION CHECKLIST
+============================
+
+After restoration:
+
+* all sections centered correctly
+* spacing consistent
+* no overlapping components
+* no collapsed layouts
+* navbar aligned properly
+* responsive layout works again
+* dark/light themes visually correct
+* text readable everywhere
+* cards visually cohesive
+* animations smooth
+* no visual glitches
+* portfolio feels premium again

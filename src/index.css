@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@variant dark (&:where(.dark, .dark *));
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg0: #ffffff;
+  --bg1: #eaf2ff;
+  --bg2: #dff3ff;
+  --text: #0b1220;
+  --muted: rgba(11, 18, 32, 0.65);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(59, 130, 246, 0.25);
+  --radius-card: 16px;
+  --border-alpha: 0.22;
+  --glass-radius: var(--radius-card);
+}
+
+.dark {
+  --bg0: #0f172a;
+  --bg1: #1e1b4b;
+  --bg2: #1a1a2e;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg0) 0%, var(--bg1) 50%, var(--bg2) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+code, pre {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Star field background */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+/* Glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-light {
+  background: rgba(139, 92, 246, 0.10);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+}
+
+.dark .glass-light {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Design system tokens */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid rgba(139, 92, 246, var(--border-alpha));
+  backdrop-filter: blur(10px);
+  border-radius: var(--glass-radius);
+}
+
+.glass-card-hover {
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.18);
+}
+
+.section-shell {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading-underline {
+  height: 4px;
+  width: 80px;
+  border-radius: 9999px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90deg, rgba(6, 182, 212, 1), rgba(139, 92, 246, 1), rgba(236, 72, 153, 1));
+}
+
+.text-token {
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.surface-token {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.surface-token-light {
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(59, 130, 246, 0.20);
+  backdrop-filter: blur(12px);
+}
+
+.dark .surface-token-light {
+  background: rgba(15, 23, 42, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cta-token {
+  color: white;
+}
+
+.dark .cta-token {
+  color: white;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5), inset 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), inset 0 0 20px rgba(6, 182, 212, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), inset 0 0 20px rgba(236, 72, 153, 0.1);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Cursor glow */
+@keyframes cursorGlow {
+  0% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.5); }
+}
+
+button, a {
+  position: relative;
+}
+
+button:hover, a:hover {
+  animation: cursorGlow 1s ease-in-out;
+}
