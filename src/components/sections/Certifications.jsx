@@ -9,112 +9,100 @@ const Certifications = () => {
       date: '2022',
       credentialId: 'AWS-CP-2022',
       icon: '☁️',
-      color: 'from-yellow-400 to-orange-400',
+      color: 'from-amber-400 to-orange-400',
       link: '/resource_docs/AWS Certified Cloud Practitioner certificate.pdf',
     },
   ]
 
   const currentlyExploring = [
-    { title: 'AI & Machine Learning', icon: '🤖', color: 'from-purple-400 to-pink-400' },
-    { title: 'Quantum Computing', icon: '⚛️', color: 'from-cyan-400 to-blue-400' },
-    { title: 'Cloud Architecture', icon: '🏗️', color: 'from-blue-400 to-cyan-400' },
-    { title: 'DevOps & Automation', icon: '⚙️', color: 'from-green-400 to-emerald-400' },
-    { title: 'Distributed Systems', icon: '🔗', color: 'from-orange-400 to-red-400' },
-    { title: 'Data Science', icon: '📊', color: 'from-pink-400 to-purple-400' },
+    { title: 'AI & Machine Learning', icon: '🤖', color: 'from-purple-500 to-indigo-500' },
+    { title: 'Quantum Computing', icon: '⚛️', color: 'from-cyan-500 to-blue-500' },
+    { title: 'Cloud Architecture', icon: '🏗️', color: 'from-blue-500 to-indigo-500' },
+    { title: 'DevOps & Automation', icon: '⚙️', color: 'from-teal-500 to-cyan-500' },
+    { title: 'Distributed Systems', icon: '🔗', color: 'from-indigo-500 to-violet-500' },
+    { title: 'Data Science', icon: '📊', color: 'from-violet-500 to-purple-500' },
   ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6 },
-    },
+    hidden: { opacity: 0, scale: 0.92 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   }
 
   return (
-    <section className="relative pt-24 pb-20">
+    <section className="relative py-32">
       <div className="mx-auto w-full max-w-6xl">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="space-y-16"
+          viewport={{ once: true, margin: '-80px' }}
+          className="space-y-14"
         >
-          {/* Section title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              Certifications & Learning
+          {/* Heading */}
+          <motion.div variants={itemVariants} className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+              Certifications &amp; Learning
             </h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full" />
-            <p className="text-gray-400 mt-4 text-lg">
+            <div className="h-0.5 w-16 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full mb-4" />
+            <p className="text-slate-500 dark:text-zinc-400 text-base">
               Verified expertise and continuous knowledge acquisition
             </p>
           </motion.div>
 
-          {/* Certifications */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-2xl font-bold text-white">🏆 Certifications</h3>
-            <div className="grid md:grid-cols-1 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.a
-                  key={index}
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  className="glass-light rounded-lg p-6 border border-yellow-400/30 hover:border-yellow-400/60 transition-all cursor-pointer group"
-                >
-                  <div className="flex items-start gap-6">
-                    <motion.div
-                      className={`text-5xl p-4 rounded-lg bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`}
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      {cert.icon}
-                    </motion.div>
+          {/* Cert cards */}
+          <motion.div variants={itemVariants} className="space-y-5">
+            <h3 className="text-lg font-bold text-slate-800 dark:text-white">🏆 Certifications</h3>
+            {certifications.map((cert, index) => (
+              <motion.a
+                key={index}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02, y: -3 }}
+                className="block glass-light rounded-2xl p-6 border border-amber-200 dark:border-amber-400/30 hover:border-amber-400 dark:hover:border-amber-400/60 transition-all cursor-pointer group"
+              >
+                <div className="flex items-center gap-5">
+                  <motion.div
+                    className="text-4xl"
+                    animate={{ rotate: [0, 4, -4, 0] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {cert.icon}
+                  </motion.div>
 
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-white mb-1">{cert.title}</h4>
-                      <p className="text-gray-400 text-sm mb-2">{cert.issuer}</p>
-                      <p className="text-xs text-gray-500 mb-3">ID: {cert.credentialId}</p>
-                      <div className="flex items-center gap-2 text-purple-400 text-sm group-hover:gap-3 transition-all">
-                        <span>View Credential</span>
-                        <motion.span whileHover={{ x: 5 }}>→</motion.span>
-                      </div>
-                    </div>
-
-                    <div className="text-right">
-                      <div className="text-sm text-gray-400">{cert.date}</div>
-                      <motion.div
-                        className="w-12 h-12 rounded-full border-2 border-yellow-400 flex items-center justify-center mt-2"
-                        animate={{ boxShadow: ['0 0 10px rgba(250, 204, 21, 0.3)', '0 0 20px rgba(250, 204, 21, 0.6)', '0 0 10px rgba(250, 204, 21, 0.3)'] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        ✓
-                      </motion.div>
-                    </div>
+                  <div className="flex-1">
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-0.5">{cert.title}</h4>
+                    <p className="text-slate-500 dark:text-zinc-400 text-sm">{cert.issuer}</p>
+                    <p className="text-slate-400 dark:text-zinc-500 text-xs mt-1">ID: {cert.credentialId}</p>
+                    <p className="text-purple-600 dark:text-purple-400 text-sm mt-2 font-medium group-hover:underline">
+                      View Credential →
+                    </p>
                   </div>
-                </motion.a>
-              ))}
-            </div>
+
+                  <div className="text-right flex flex-col items-end gap-2">
+                    <span className="text-sm text-slate-500 dark:text-zinc-400">{cert.date}</span>
+                    <motion.div
+                      className="w-10 h-10 rounded-full border-2 border-amber-400 flex items-center justify-center text-amber-500 dark:text-amber-400 text-sm font-bold"
+                      animate={{ boxShadow: ['0 0 8px rgba(251,191,36,0.2)', '0 0 18px rgba(251,191,36,0.5)', '0 0 8px rgba(251,191,36,0.2)'] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      ✓
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
           </motion.div>
 
-          {/* Currently Exploring */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-2xl font-bold text-white">🚀 Currently Exploring</h3>
-            <p className="text-gray-400 text-sm">
+          {/* Currently exploring */}
+          <motion.div variants={itemVariants} className="space-y-5">
+            <h3 className="text-lg font-bold text-slate-800 dark:text-white">🚀 Currently Exploring</h3>
+            <p className="text-slate-500 dark:text-zinc-400 text-sm">
               Actively learning and experimenting with these cutting-edge domains:
             </p>
 
@@ -123,79 +111,57 @@ const Certifications = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.08, rotateY: 8 }}
-                  className="glass rounded-lg p-6 border border-purple-400/20 hover:border-purple-400/50 transition-all group"
+                  whileHover={{ scale: 1.04, y: -4 }}
+                  className="glass rounded-2xl p-5 border border-slate-200/60 dark:border-white/8 hover:border-purple-300 dark:hover:border-purple-400/40 transition-all group"
                 >
                   <motion.div
-                    className="text-4xl mb-3"
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 3 + index * 0.5, repeat: Infinity }}
+                    className="text-3xl mb-3"
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 3 + index * 0.4, repeat: Infinity }}
                   >
                     {item.icon}
                   </motion.div>
 
-                  <h4 className={`font-bold text-white group-hover:bg-gradient-to-r group-hover:${item.color} group-hover:bg-clip-text group-hover:text-transparent transition-all`}>
+                  <h4 className={`font-bold text-sm bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                     {item.title}
                   </h4>
-
-                  {/* Orbiting indicator */}
-                  <motion.div
-                    className="mt-4 h-6 w-6 mx-auto"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                  >
-                    <div className="w-full h-full rounded-full border border-purple-400/30" />
-                    <motion.div
-                      className="absolute w-1.5 h-1.5 bg-purple-400 rounded-full top-0 left-1/2 transform -translate-x-1/2"
-                      animate={{ scale: [1, 1.5, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </motion.div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Learning Roadmap */}
-          <motion.div variants={itemVariants} className="glass rounded-lg p-8 border border-cyan-400/30">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-4">📚 Learning Roadmap</h3>
-            <div className="space-y-3 text-gray-300">
-              <div className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">→</span>
-                <span>Complete AWS Solutions Architect certification</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">→</span>
-                <span>Deep dive into Kubernetes and container orchestration</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">→</span>
-                <span>Master advanced database design and optimization</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">→</span>
-                <span>Build production-grade microservices architecture</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-cyan-400 mt-1">→</span>
-                <span>Explore AI/ML applications in real-world systems</span>
-              </div>
+          {/* Roadmap */}
+          <motion.div variants={itemVariants} className="glass rounded-2xl p-8 border border-cyan-200 dark:border-cyan-400/25">
+            <h3 className="text-lg font-bold text-cyan-600 dark:text-cyan-400 mb-4">📚 Learning Roadmap</h3>
+            <div className="space-y-3">
+              {[
+                'Complete AWS Solutions Architect certification',
+                'Deep dive into Kubernetes and container orchestration',
+                'Master advanced database design and optimization',
+                'Build production-grade microservices architecture',
+                'Explore AI/ML applications in real-world systems',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-cyan-500 dark:text-cyan-400 mt-0.5 font-bold">→</span>
+                  <span className="text-slate-700 dark:text-zinc-300 text-sm">{item}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Credly badges section */}
-          <motion.div variants={itemVariants} className="glass rounded-lg p-8 border border-purple-400/30">
-            <h3 className="text-2xl font-bold text-purple-400 mb-4">🎖️ Verified Credentials</h3>
-            <p className="text-gray-400 mb-4">
+          {/* Credly */}
+          <motion.div variants={itemVariants} className="glass rounded-2xl p-8 border border-purple-200 dark:border-purple-400/25">
+            <h3 className="text-lg font-bold text-purple-600 dark:text-purple-400 mb-3">🎖️ Verified Credentials</h3>
+            <p className="text-slate-600 dark:text-zinc-400 text-sm mb-5">
               All certifications are verified on Credly. View my complete credentials and badges:
             </p>
             <motion.a
               href="https://www.credly.com/users/sibusiso-skhosana"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 rounded-lg glass-light text-purple-300 hover:text-purple-100 font-semibold transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 py-2.5 rounded-xl glass-light border border-purple-200 dark:border-purple-400/30 text-purple-700 dark:text-purple-300 hover:text-purple-900 dark:hover:text-purple-100 font-semibold transition-all text-sm"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
             >
               View on Credly →
             </motion.a>

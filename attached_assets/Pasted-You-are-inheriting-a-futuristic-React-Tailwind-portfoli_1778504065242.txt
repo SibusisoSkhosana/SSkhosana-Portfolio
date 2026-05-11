@@ -1,0 +1,277 @@
+You are inheriting a futuristic React + Tailwind portfolio project that LOST its visual quality after dependency/package modernization and multiple failed AI edits.
+
+The project originally had:
+
+* premium cinematic spacing
+* balanced section layouts
+* elegant futuristic styling
+* cohesive dark mode
+* professional visual hierarchy
+
+Now the site looks visually broken.
+
+==================================================
+CURRENT PROBLEMS
+================
+
+1. SECTIONS ARE SQUEEZED TOGETHER
+
+* vertical spacing collapsed
+* sections have almost no breathing room
+* content feels cramped
+* premium layout rhythm is gone
+
+2. CONTENT ONLY HAS SIDE PADDING
+
+* layouts lost proper max-width behavior
+* sections no longer feel centered
+* content stretches awkwardly
+* spacing system became inconsistent
+
+3. LIGHT MODE IS COMPLETELY BROKEN
+   Current light mode:
+
+* random rainbow colors everywhere
+* inconsistent surfaces
+* broken gradients
+* mismatched card colors
+* visual chaos
+
+4. TEXT CONTRAST IS BROKEN
+
+* white/light text appears on bright backgrounds
+* some text becomes invisible
+* readability/accessibility is poor
+
+5. PREMIUM DESIGN QUALITY IS GONE
+   The portfolio now feels:
+
+* messy
+* inconsistent
+* amateur
+* visually noisy
+
+Instead of:
+
+* premium
+* cinematic
+* elegant
+* futuristic
+* intentional
+
+==================================================
+IMPORTANT
+=========
+
+DO NOT:
+
+* randomly patch components
+* add arbitrary margins
+* stack random Tailwind classes
+* introduce more colors
+* invent new design directions
+
+This task is:
+A DESIGN SYSTEM RESTORATION.
+
+==================================================
+PRIMARY OBJECTIVE
+=================
+
+Restore:
+
+* premium spacing
+* balanced layouts
+* cohesive themes
+* readable typography
+* elegant futuristic atmosphere
+
+The portfolio should feel like:
+A professionally designed SaaS/product landing page.
+
+==================================================
+PHASE 1 — REBUILD SPACING SYSTEM
+================================
+
+Restore consistent vertical rhythm across ALL sections.
+
+Sections currently need MORE breathing room.
+
+Apply proper spacing between:
+
+* Navbar
+* Hero
+* About
+* Skills
+* Projects
+* Timeline
+* Certifications
+* Contact
+* Footer
+
+Use CONSISTENT spacing scale.
+
+Examples:
+py-24
+py-32
+space-y-16
+gap-12
+
+The page should breathe again.
+
+==================================================
+PHASE 2 — RESTORE CONTENT WIDTH + CENTERING
+===========================================
+
+Rebuild layout containers properly.
+
+Every major section should use:
+
+* centered content
+* proper max-width
+* responsive layout
+* balanced padding
+
+Examples:
+max-w-7xl
+mx-auto
+px-6
+lg:px-8
+
+The content should feel intentionally framed,
+NOT stretched edge-to-edge.
+
+==================================================
+PHASE 3 — REMOVE THE RAINBOW COLOR CHAOS
+========================================
+
+Current light mode contains:
+
+* too many accent colors
+* conflicting gradients
+* inconsistent glow colors
+* visually noisy styling
+
+SIMPLIFY THE DESIGN SYSTEM.
+
+==================================================
+ESTABLISH A CONTROLLED COLOR PALETTE
+====================================
+
+DARK MODE:
+
+* deep blacks
+* slate/zinc surfaces
+* cyan accents
+* subtle purple/blue glow
+* restrained futuristic aesthetic
+
+LIGHT MODE:
+
+* soft whites
+* pale slate blues
+* atmospheric cloud tones
+* elegant subtle gradients
+* restrained accent colors
+
+IMPORTANT:
+NO RANDOM RAINBOW COLORS.
+
+The portfolio should feel:
+clean, premium, cinematic.
+
+==================================================
+PHASE 4 — FIX TEXT CONTRAST PROPERLY
+====================================
+
+Audit ALL typography.
+
+Current issue:
+light text appears on bright surfaces.
+
+Fix ALL contrast problems.
+
+LIGHT MODE:
+Use darker text:
+text-slate-900
+text-zinc-700
+text-slate-800
+
+DARK MODE:
+Use:
+dark:text-white
+dark:text-zinc-300
+
+No text should EVER become unreadable.
+
+==================================================
+PHASE 5 — RESTORE CARD/SURFACE CONSISTENCY
+==========================================
+
+All cards/panels must feel cohesive.
+
+LIGHT MODE:
+
+* soft bright surfaces
+* subtle borders
+* elegant shadows
+
+DARK MODE:
+
+* glassmorphism
+* dark translucent surfaces
+* restrained glow effects
+
+NO mismatched random backgrounds.
+
+==================================================
+PHASE 6 — REBUILD PREMIUM FEEL
+==============================
+
+Restore:
+
+* cinematic spacing
+* visual hierarchy
+* elegant composition
+* futuristic atmosphere
+* clean responsive layouts
+
+The portfolio should feel:
+
+* polished
+* intentional
+* modern
+* premium
+* production-ready
+
+==================================================
+FINAL REQUIREMENT
+=================
+
+This is NOT a “make it work” task.
+
+This is:
+RESTORE THE ORIGINAL HIGH-END DESIGN QUALITY.
+
+The final site should look like:
+A premium futuristic developer portfolio built by a serious engineer.
+
+NOT:
+A broken AI-generated demo with random colors and cramped layouts.
+
+==================================================
+FINAL VERIFICATION
+==================
+
+After restoration:
+
+* sections breathe properly
+* layouts centered again
+* spacing consistent
+* light mode elegant and readable
+* dark mode cinematic and cohesive
+* no rainbow color chaos
+* no invisible text
+* cards visually unified
+* typography balanced
+* portfolio feels premium again

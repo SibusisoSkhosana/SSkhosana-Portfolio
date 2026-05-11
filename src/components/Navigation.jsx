@@ -24,15 +24,15 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
-      <div className="container mx-auto px-6 sm:px-10 lg:px-16 py-4 flex justify-between items-center">
+      <div className="mx-auto flex justify-between items-center py-4">
         <motion.div
-          className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
-          whileHover={{ scale: 1.1 }}
+          className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 bg-clip-text text-transparent"
+          whileHover={{ scale: 1.08 }}
         >
           SIBU
         </motion.div>
 
-        {/* Desktop Menu */}
+        {/* Desktop menu */}
         <div className="hidden md:flex gap-8">
           {sections.map((section) => (
             <motion.button
@@ -40,8 +40,8 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
               onClick={() => scrollToSection(section.id)}
               className={`relative text-sm font-medium transition-colors ${
                 activeSection === section.id
-                  ? 'text-purple-400 dark:text-purple-300'
-                  : 'text-zinc-700 hover:text-slate-900 dark:text-zinc-300 dark:hover:text-white'
+                  ? 'text-purple-600 dark:text-purple-400'
+                  : 'text-slate-600 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -50,7 +50,7 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
               {activeSection === section.id && (
                 <motion.div
                   layoutId="nav-underline"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
                   initial={false}
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
@@ -59,65 +59,55 @@ const Navigation = ({ activeSection, isDarkMode, toggleDarkMode }) => {
           ))}
         </div>
 
-        {/* Mobile Hamburger & Theme Toggle */}
-        <div className="flex gap-2 md:gap-4">
+        {/* Right controls */}
+        <div className="flex gap-2 md:gap-3">
           <motion.button
             type="button"
-            onClick={(e) => {
-              e.preventDefault()
-              toggleDarkMode()
-            }}
-            className="p-2 rounded-lg glass-light border border-purple-400/10 dark:border-white/10"
+            onClick={(e) => { e.preventDefault(); toggleDarkMode() }}
+            className="p-2 rounded-lg glass-light border border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             {isDarkMode ? '🌙' : '☀️'}
           </motion.button>
 
-          {/* Hamburger Menu Button */}
           <motion.button
-            className="md:hidden p-2 rounded-lg glass-light border border-purple-400/10 dark:border-white/10"
+            className="md:hidden p-2 rounded-lg glass-light border border-slate-200 dark:border-white/10"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <div className="w-6 h-5 flex flex-col justify-around">
-              <motion.span
-                className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"
-                animate={isMobileMenuOpen ? { rotate: 45, y: 11 } : { rotate: 0, y: 0 }}
-              />
-              <motion.span
-                className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"
-                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-              />
-              <motion.span
-                className="w-full h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"
-                animate={isMobileMenuOpen ? { rotate: -45, y: -11 } : { rotate: 0, y: 0 }}
-              />
+              <motion.span className="w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+                animate={isMobileMenuOpen ? { rotate: 45, y: 11 } : { rotate: 0, y: 0 }} />
+              <motion.span className="w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+                animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }} />
+              <motion.span className="w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500"
+                animate={isMobileMenuOpen ? { rotate: -45, y: -11 } : { rotate: 0, y: 0 }} />
             </div>
           </motion.button>
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-slate-950/95 dark:bg-slate-950/95 backdrop-blur-md border-t border-purple-400/20"
+            className="md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-t border-slate-200 dark:border-white/10"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="container mx-auto px-6 sm:px-10 py-4 flex flex-col gap-3">
+            <div className="px-6 py-4 flex flex-col gap-2">
               {sections.map((section) => (
                 <motion.button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`text-left px-4 py-2.5 rounded-lg transition-colors text-sm font-medium ${
                     activeSection === section.id
-                      ? 'bg-purple-400/20 text-purple-300'
-                      : 'text-zinc-300 hover:bg-purple-400/10 hover:text-white'
+                      ? 'bg-purple-50 dark:bg-purple-400/20 text-purple-600 dark:text-purple-300'
+                      : 'text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-white/5'
                   }`}
                   whileHover={{ x: 4 }}
                 >
