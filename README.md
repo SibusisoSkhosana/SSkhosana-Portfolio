@@ -165,7 +165,7 @@ Sibusiso Skhosana - sbasiso@gmail.com
 
 ## 📄 License
 
-This portfolio is custom-built and personal. Feel free to use as inspiration for your own!
+This portfolio is custom-built and personal. 
 
 ---
 
